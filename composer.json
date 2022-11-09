@@ -23,7 +23,9 @@
   },
   "require": {
     "php": ">=8.0.0 <8.2.0",
-    "getkirby/cms": "^3.8"
+    "getkirby/cms": "^3.8",
+    "leitsch/kirby-blade": "^2.3",
+    "fabianmichael/kirby-meta": "dev-main"
   },
   "config": {
     "allow-plugins": {
@@ -36,5 +38,6 @@
       "Composer\\Config::disableProcessTimeout",
       "@php -S localhost:8000 kirby/router.php"
     ]
-  }
+  },
+  "minimum-stability": "dev"
 }

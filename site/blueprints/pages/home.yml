@@ -1,8 +1,8 @@
-title: Site
+title: Home
 
 tabs:
   content:
     sections:
       pages:
         type: pages
-  meta: tabs/meta/site
+  meta: tabs/meta/page
