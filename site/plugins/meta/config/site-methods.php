@@ -17,4 +17,7 @@ return [
             return '<span data-theme="notice" class="k-meta-warning-box">' . $text . '</span>';
         }
     },
+    'indexedPages' => function () {
+        return $this->index()->filterBy('isIndexible', '==', true);
+    },
 ];

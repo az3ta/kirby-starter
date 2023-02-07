@@ -13,7 +13,11 @@ return function (Kirby $kirby) {
 
     if ($kirby->option('fabianmichael.meta.social') !== false) {
         $fields  ['meta_opengraph'] = 'fields/meta/opengraph-group';
-        $fields  ['meta_twitter'] = 'fields/meta/twitter-group';
+
+        if ($kirby->option('fabianmichael.meta.twitter')) {
+            $fields['meta_twitter'] = 'fields/meta/twitter-group';
+        }
+
         $sections['meta_sharing_preview'] = 'sections/meta/share-preview';
         $sections['meta_files'] = 'sections/meta/files';
     }
@@ -39,7 +43,7 @@ return function (Kirby $kirby) {
 
     if (sizeof($sections) > 0) {
         $columns['meta_sidebar'] = [
-            'sticky' => 'true',
+            'sticky' => true,
             'width' => '1/3',
             'sections' => $sections,
         ];

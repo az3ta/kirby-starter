@@ -2,10 +2,6 @@
 
 return [
   'debug'  => true,
-   'panel' =>[
-    'install' => true,
-    'slug' => 'admin-area'
-   ],
-
-
+  'panel' => require __DIR__ . '/panel.php',
+  'thumbs' => require __DIR__ . '/thumbs.php',
 ];
