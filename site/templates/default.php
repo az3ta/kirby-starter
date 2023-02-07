@@ -1,5 +1,16 @@
-<?php snippet('header') ?>
+<?php
+/**
+ * @var $kirby \Kirby\Cms\App
+ * @var $site \Kirby\Cms\Site
+ * @var $pages \Kirby\Cms\Pages
+ * @var $page \Kirby\Cms\Page
+ */
+?>
 
-<h1><?= $page->title() ?></h1>
+<?php snippet('layouts/default', slots: true) ?>
 
-<?php snippet('footer') ?>
+<main>
+
+  <h1><?= $page->title() ?></h1>
+
+</main>
