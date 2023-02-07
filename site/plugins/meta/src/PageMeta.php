@@ -15,6 +15,7 @@ class PageMeta
 
     protected Page $page;
     protected Kirby $kirby;
+    protected ?string $languageCode;
     protected array $metadata = [];
 
     public function __call($name, $arguments): mixed
@@ -163,7 +164,7 @@ class PageMeta
         } elseif ($owner === 'person' && ($user = $site->meta_person()->toUser())) {
             $person = [
                 '@type' => 'Person',
-                '@id'   => url('/#owner'),
+                '@id'   => $ownerId,
                 'name' => $user->name()->toString(),
                 'email' => $user->email(),
             ];
@@ -244,7 +245,7 @@ class PageMeta
         return (float) max(0, min(1, $priority)); // 0 <= value <= 1
     }
 
-    public function robots(?string $name = null): bool|string|null
+    public function robots(?string $name = null): bool|string
     {
         if (is_string($name)) {
             // single robots value of page as boolean
@@ -278,7 +279,7 @@ class PageMeta
 
             $result = sizeof($robots) > 0
                 ? implode(', ', $robots)
-                : null;
+                : 'all';
 
             if ($result === 'noindex, nofollow') {
                 return 'none';
@@ -375,26 +376,27 @@ class PageMeta
         }
 
         // Twitter
-
-        $social[] = [
-            'name' => 'twitter:card',
-            'content' => 'summary_large_image', // TODO: make overridable from metadata() method
-        ];
-
-        $twitterSite = $this->get('twitter_site', false, true);
-        if ($twitterSite->isNotEmpty() === true) {
+        if (option('fabianmichael.meta.twitter')) {
             $social[] = [
-                'name' => 'twitter:site',
-                'content' => '@' . ltrim($twitterSite->toString(), '@'),
+                'name' => 'twitter:card',
+                'content' => 'summary_large_image',
             ];
-        }
 
-        $twitterCreator = $this->get('twitter_creator', true, true);
-        if ($twitterCreator->isNotEmpty() === true) {
-            $social[] = [
-                'name' => 'twitter:creator',
-                'content' => '@' . ltrim($twitterCreator->toString(), '@'),
-            ];
+            $twitterSite = $this->get('twitter_site', false, true);
+            if ($twitterSite->isNotEmpty() === true) {
+                $social[] = [
+                    'name' => 'twitter:site',
+                    'content' => '@' . ltrim($twitterSite->toString(), '@'),
+                ];
+            }
+
+            $twitterCreator = $this->get('twitter_creator', true, true);
+            if ($twitterCreator->isNotEmpty() === true) {
+                $social[] = [
+                    'name' => 'twitter:creator',
+                    'content' => '@' . ltrim($twitterCreator->toString(), '@'),
+                ];
+            }
         }
 
         // Additional metadata from page model
