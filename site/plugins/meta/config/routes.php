@@ -1,11 +1,10 @@
 <?php
 
-use FabianMichael\Meta\Sitemap;
 use FabianMichael\Meta\SiteMeta;
-use Kirby\Cms\App as Kirby;
-use Kirby\Http\Response;
+use Kirby\Cms\App;
+use Kirby\Cms\Page;
 
-return function (Kirby $kirby) {
+return function (App $kirby) {
     $routes = [];
 
     if ($kirby->option('fabianmichael.meta.robots') !== false) {
@@ -30,7 +29,6 @@ return function (Kirby $kirby) {
         ];
     }
 
-
     $routes[] = [
         'pattern' => 'sitemap.xml',
         'action' => function () use ($kirby) {
@@ -38,16 +36,14 @@ return function (Kirby $kirby) {
                 $this->next();
             }
 
-            $sitemap = [];
-            $cache = $kirby->cache('pages');
-            $cacheKey = 'sitemap.xml';
-
-            if (option('debug') === true || ! ($sitemap = $cache->get($cacheKey))) {
-                $sitemap = Sitemap::factory()->generate();
-                $cache->set($cacheKey, $sitemap);
-            }
-
-            return new Response($sitemap, 'application/xml');
+            return Page::factory([
+                'slug' => 'sitemap',
+                'template' => 'sitemap',
+                'model' => 'sitemap',
+                'content' => [
+                    'title' => 'XML Sitemap',
+                ],
+            ])->render(contentType: 'xml');
         },
     ];
 

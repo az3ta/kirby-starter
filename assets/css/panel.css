@@ -1,0 +1,133 @@
+[data-role="editor"] .k-tab-button[title="Site Settings"],
+[data-role="editor"] .k-tab-button[title="Site Styling"] {
+  display: none;
+}
+
+/* Block selector */
+@media screen and (min-width: 60rem) {
+  .k-block-selector.k-dialog {
+    width: 60vw;
+    height: 80vh;
+
+    max-width: 120rem;
+    max-height: 60rem;
+  }
+
+  .k-block-types {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 120rem) {
+  .k-block-types {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Layout selector */
+@media screen and (min-width: 60rem) {
+  .k-layout-selector.k-dialog {
+    width: 75vw;
+    height: 75vh;
+
+    max-width: 120rem;
+    max-height: 60rem;
+  }
+
+  .k-layout-selector.k-dialog ul {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  .k-layout-selector.k-dialog ul {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media screen and (min-width: 100rem) {
+  .k-layout-selector.k-dialog ul {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+@media screen and (min-width: 120rem) {
+  .k-layout-selector.k-dialog ul {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  /* show widths in layout selector */
+  .k-layout-selector.k-dialog .k-column[data-width]::before {
+    font-family: "SFMono-Regular", Consolas, Liberation Mono, Menlo, Courier,
+      serif;
+    font-size: 0.7rem;
+    color: #ccc;
+    content: attr(data-width);
+  }
+}
+
+/* show widths in layout view */
+.k-layout .k-column[data-width]::before {
+  font-family: "SFMono-Regular", Consolas, Liberation Mono, Menlo, Courier,
+    serif;
+  font-size: 0.7rem;
+  color: #ccc;
+  content: attr(data-width);
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  z-index: var(--z-content);
+}
+
+/* Sweeting the panel */
+
+.k-section,
+.k-sections {
+  padding-bottom: 3rem;
+}
+
+.k-line-field {
+  height: 1rem;
+}
+
+.k-headline {
+  font-weight: 700;
+}
+
+.k-headline[data-size="large"] {
+  position: relative;
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  margin-bottom: -0.5rem;
+}
+
+.k-headline-field .k-headline[data-numbered]:before {
+  font-weight: 700;
+}
+
+.k-header .k-header-buttons {
+  margin-bottom: 0.5rem;
+}
+
+.k-tabs nav {
+  justify-content: left;
+}
+
+.k-input[data-theme="field"] {
+  border: 1px solid var(--field-input-background);
+  box-shadow: var(--shadow);
+}
+
+.k-input[data-theme="field"]:focus-within {
+  box-shadow: var(--shadow-inset);
+}
+
+.k-layout:not(:last-of-type) {
+  margin-bottom: 0.5rem;
+}
+
+.k-block-container[data-selected="true"] {
+  box-shadow: var(--color-focus-outline) 0 0 0 2px;
+}
