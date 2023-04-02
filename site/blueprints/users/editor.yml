@@ -1,0 +1,76 @@
+title: Editor
+
+permissions:
+  access:
+    panel: true
+    site: true
+    settings: false
+    users: false
+    system: false
+    languages: false
+  site:
+    update: false
+  files:
+    delete: false
+    replace: false
+    update: true
+  pages:
+    delete: false
+  users: false
+  user:
+    changeRole: false
+    delete: false
+
+columns:
+  - width: 1/2
+    fields:
+      street:
+        label:
+          en: Street
+          de: Straße
+        type: text
+      zip:
+        label:
+          en: ZIP
+          de: Postleitzahl
+        type: text
+        width: 1/4
+      city:
+        label:
+          en: City
+          de: Stadt
+        type: text
+        width: 3/4
+      country:
+        label:
+          en: Country
+          de: Land
+        type: text
+      description:
+        label:
+          en: Description
+          de: Beschreibung
+        type: textarea
+
+  - width: 1/2
+    fields:
+      website:
+        label:
+          en: Website
+          de: Webseite
+        type: url
+      facebook:
+        label: Facebook
+        type: text
+        icon: facebook
+        placeholder: username
+      twitter:
+        label: Twitter
+        type: text
+        icon: twitter
+        placeholder: @username
+      instagram:
+        label: Instagram
+        type: text
+        icon: instagram
+        placeholder: username

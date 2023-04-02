@@ -1,11 +1,14 @@
 <?php
 
+use FabianMichael\Meta\SitemapPage;
 use Kirby\Cms\App;
 
 @include_once __DIR__ . '/vendor/autoload.php';
 
 App::plugin('fabianmichael/meta', [
     'options' => [
+        'cache' => true,
+
         'sitemap' => true,
         'sitemap.detailSettings' => false,
         'sitemap.pages.exclude' => [],
@@ -67,9 +70,11 @@ App::plugin('fabianmichael/meta', [
     ],
     'fields' => require __DIR__ . '/config/fields.php',
     'filesMethods' => require __DIR__ . '/config/files-methods.php',
-    'hooks' => require __DIR__ . '/config/hooks.php',
     'routes' => require __DIR__ . '/config/routes.php',
     'pageMethods' => require __DIR__ . '/config/page-methods.php',
+    'pageModels' => [
+        'sitemap' => SitemapPage::class,
+    ],
     'sections' => require __DIR__ . '/config/sections.php',
     'siteMethods' => require __DIR__ . '/config/site-methods.php',
     'snippets' => [
@@ -78,6 +83,10 @@ App::plugin('fabianmichael/meta', [
         'meta/robots'  => __DIR__ . '/snippets/robots.php',
         'meta/social'  => __DIR__ . '/snippets/social.php',
         'meta/schema'  => __DIR__ . '/snippets/schema.php',
+    ],
+    'templates' => [
+        'sitemap' => __DIR__ . '/templates/sitemap.php',
+        'sitemap.xml' => __DIR__ . '/templates/sitemap.xml.php',
     ],
     'translations' => [
         'de' => require __DIR__ . '/translations/de.php',
