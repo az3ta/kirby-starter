@@ -9,13 +9,13 @@ permissions:
     system: false
     languages: false
   site:
-    update: false
+    update: true
   files:
-    delete: false
-    replace: false
+    delete: true
+    replace: true
     update: true
   pages:
-    delete: false
+    delete: true
   users: false
   user:
     changeRole: false
