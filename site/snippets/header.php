@@ -1,0 +1,1 @@
+<header class="bg-red-200">Header</header>

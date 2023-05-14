@@ -7,5 +7,5 @@
   <?php snippet('meta') ?>
   <?= css('assets/css/styles.css') ?>
 </head>
-<body>
+<body class="flex flex-col justify-between h-screen">
 

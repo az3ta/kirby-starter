@@ -8,8 +8,9 @@
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
+<?php snippet('header') ?>
 
-<main>
+<main class="flex-grow mb-auto bg-yellow-200">
 
   <h1><?= $page->title() ?></h1>
 
