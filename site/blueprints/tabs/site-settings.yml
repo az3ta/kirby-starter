@@ -1,0 +1,38 @@
+label:
+  en: Site Settings
+icon: settings
+
+columns:
+  - width: 2/3
+    fields:
+      contactsHeadline:
+        type: headline
+        label: Contacts
+        numbered: false
+      mainEmail:
+        label: Main Email
+        type: email
+      socialMediaHeadline:
+        type: headline
+        label: Social Media
+        numbered: false
+      socialMediaOptions:
+        type: toggles
+        label: Social Media Display Options
+        default: Text
+        options:
+          - Text
+          - Icons
+      socialMedia:
+        label: Social Media
+        type: structure
+        fields:
+          platform:
+            type: text
+          url:
+            type: url
+          icon:
+            type: files
+            max: 1
+
+

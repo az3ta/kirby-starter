@@ -1,0 +1,100 @@
+label:
+  en: Site content
+  de: Inhalt der Website
+  it: Contenuto sito
+icon: dashboard
+columns:
+  - width: 1/3
+    sections:
+      # draft pages
+      draft:
+        type: pages
+        headline:
+          en: Draft pages
+          de: Entwurf Seiten
+        status: draft
+        info: " {{ page.template }}"
+        search: true
+        empty:
+          en: No pages yet
+          de: Noch keine Seiten
+        image:
+          query: false
+          back: black
+        help:
+          en: Click "add" button to create new page, and select template.
+          de: Klicken Sie auf die Schaltfläche „Hinzufügen“, um eine neue Seite zu erstellen, und wählen Sie eine Vorlage aus.
+        templates: # list of allowed templates
+          - default
+      # published pages
+      published:
+        type: pages
+        headline:
+          en: Published pages
+          de: Veröffentlichte Seiten
+        status: published
+        info: " {{ page.template }}"
+        search: true
+        empty:
+          en: No pages yet
+          de: Noch keine Seiten
+        help:
+          en: Listed pages goes automatically to main navigation.
+          de: Die aufgelisteten Seiten wechseln automatisch zur Hauptnavigation.
+        image:
+          query: false
+          back: black
+        templates: # list of allowed templates
+          - default
+          - error
+          - home
+          - program
+          - filmfest
+          - about
+          - tickets
+
+  - width: 2/3
+    sections:
+      websiteStats:
+        label:
+          en: Website Info
+          de: Webseiten-Info
+          it: Statistiche Sito internet
+        type: stats
+        size: small
+        reports:
+          - label:
+              en: Pages
+              de: Seiten
+              it: Pagine
+            value: "{{ site.index.count }}"
+            info:
+              en: Total number of published website pages
+              de: Gesamtzahl der veröffentlichten Website-Seiten
+              it: Numero totale pagine pubblicate
+            theme: positive
+          - label:
+              en: Users
+              de: Benutzer
+              it: Utenti
+            value: "{{ kirby.users.count }}"
+            info:
+              en: Total number of website users
+              de: Gesamtzahl der Website-Benutzer
+              it: Numero totale utenti sito
+            theme: positive
+      websiteNotes:
+        type: fields
+        fields:
+          contentGuidelines:
+            label: 
+              en: Content Guidelines
+              it: Guidelines Contenuto
+            type: info
+            text: "**Important** to ensure smooth perfomance of the website:<br/>– Upload images with the *longer side* measuring 2200px.<br/>– Only use *.jpg* file format.</br>– Use (link: https://squoosh.app/ text: Squoosh) or (link: https://imageoptim.com/mac text: ImageOptim) to optimize them."
+          notes:
+            label:
+              en: Notes
+              it: Note
+            type: writer
+            help: You can write here some notes about the website. All user have access to this space. The content is saved.

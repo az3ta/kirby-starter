@@ -1,8 +1,6 @@
 title: Site
 
 tabs:
-  content:
-    sections:
-      pages:
-        type: pages
+  content: tabs/site-content
+  settings: tabs/site-settings
   meta: tabs/meta/site

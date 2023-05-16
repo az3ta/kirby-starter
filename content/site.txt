@@ -1,1 +1,80 @@
-Title: Site Title
+Title: Kirby Starter (az3ta)
+
+----
+
+Notes: 
+
+----
+
+Mainemail: 
+
+----
+
+Socialmediaoptions: Text
+
+----
+
+Socialmedia:
+
+- 
+  platform: Instagram
+  url: https://www.instagram.com/username
+  icon: [ ]
+  plaform: Instagram
+- 
+  platform: Twitter
+  url: https://www.twitter.com/username
+  icon: [ ]
+  plaform: Instagram
+
+----
+
+Meta-description: 
+
+----
+
+Meta-title-separator: 
+
+----
+
+Meta-website-owner: 
+
+----
+
+Meta-org-name: 
+
+----
+
+Meta-org-logo: 
+
+----
+
+Meta-person: 
+
+----
+
+Og-site-name: 
+
+----
+
+Og-image: 
+
+----
+
+Robots-index: 
+
+----
+
+Robots-follow: 
+
+----
+
+Robots-archive: 
+
+----
+
+Robots-imageindex: 
+
+----
+
+Robots-snippet: 
