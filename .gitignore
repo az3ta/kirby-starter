@@ -49,6 +49,10 @@ Icon
 
 /site/config/.license
 
+# ------------
+# Kirby Starter Custom
+# ------------
+
 /kirby
 /vendor
 /node_modules

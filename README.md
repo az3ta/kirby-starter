@@ -1,3 +1,7 @@
 # Kirby Starter
 
-personal kirby starter kit
+Personal Kirby Starter Kit
+
+### Features
+
+-   Tailwind CSS integration
