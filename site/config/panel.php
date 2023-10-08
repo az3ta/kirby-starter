@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'install' => false,
+    'install' => true,
     'slug' => 'panel-area',
     'css' => 'assets/css/panel.css'
 ];
