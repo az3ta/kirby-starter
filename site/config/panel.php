@@ -2,6 +2,6 @@
 
 return [
     'install' => false,
-    'slug' => 'admin-area',
+    'slug' => 'panel-area',
     'css' => 'assets/css/panel.css'
 ];
