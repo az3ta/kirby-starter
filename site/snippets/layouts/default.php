@@ -2,4 +2,4 @@
 
 <?= $slots->default() ?>
 
-<?php snippet('footer') ?>
+<?php snippet('foot') ?>

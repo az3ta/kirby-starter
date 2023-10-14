@@ -26,6 +26,10 @@ Socialmedia:
   url: https://www.twitter.com/username
   icon: [ ]
   plaform: Instagram
+- 
+  platform: Other Social
+  url: ""
+  icon: [ ]
 
 ----
 
