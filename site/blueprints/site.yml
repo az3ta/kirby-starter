@@ -3,4 +3,5 @@ title: Site
 tabs:
   content: tabs/site-content
   settings: tabs/site-settings
+  check: tabs/site-test
   meta: tabs/meta/site

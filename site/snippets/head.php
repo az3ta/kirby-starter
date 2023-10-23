@@ -12,4 +12,4 @@
 
 <body class="flex flex-col justify-between h-screen">
 
-  <header class="bg-red-200">Header</header>
+  <header class="p-4 bg-red-200">Header</header>

@@ -1,0 +1,12 @@
+label:
+  en: Test Content
+icon: cog
+
+columns:
+  - width: 2/3
+    sections:
+      testImages:
+        label: Test Images
+        type: files
+        layout: cards
+        template: test
