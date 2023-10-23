@@ -26,23 +26,13 @@ Icon
 # NEVER publish these files via Git!
 # -------------SECURITY-------------
 
-# Cache Files
+# Accounts + Sessions + Cache
 # ---------------
 
-/site/cache/*
-!/site/cache/index.html
-
-# Accounts
-# ---------------
-
-/site/accounts/*
-!/site/accounts/index.html
-
-# Sessions
-# ---------------
-
-/site/sessions/*
-!/site/sessions/index.html
+/storage/*
+!/storage/accounts/index.html
+!/storage/sessions/index.html
+!/storage/cache/index.html
 
 # License
 # ---------------
@@ -56,3 +46,4 @@ Icon
 /kirby
 /vendor
 /node_modules
+
