@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "setup": "composer install && composer update && npm install && npm update",
+    "update": "composer update && npm update",
     "watch": "npx tailwindcss -i ./src/css/tailwind.css -o ./assets/css/styles.css -w",
     "build": "npx tailwindcss -i ./src/css/tailwind.css -o ./assets/css/styles.css -m"
   },
