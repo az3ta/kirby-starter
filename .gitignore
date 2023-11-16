@@ -43,6 +43,8 @@ Icon
 # Kirby Starter Custom
 # ------------
 
-/kirby
+
 /vendor
+/vendor/*
 /node_modules
+/node_modules/*
