@@ -2,7 +2,7 @@
 
 define('KIRBY_HELPER_DUMP', false);
 
-require __DIR__ . '/../kirby/bootstrap.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 $base = dirname(__DIR__);
 $storage = $base . '/storage';
